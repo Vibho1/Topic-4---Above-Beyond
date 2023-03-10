@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Data</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      body {
+        background-image: url('https://wallpaperaccess.com/full/1971385.jpg');
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">User Data</a>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div id="results"></div>
+      <div id="repo-results"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+      $(function() {
+        var userData = localStorage.getItem('userData');
+        var repoTable = localStorage.getItem('repoTable');
+        if (userData) {
+          $('#results').html(userData);
+          $('#repo-results').html(repoTable); // add this line
+        } else {
+          $('#results').html('<div class="text-center">User data not found.</div>');
+        }
+      });
+    </script>
+  </body>
+</html>
